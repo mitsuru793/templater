@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+require 'thor'
+require 'awesome_print'
+require 'templater'
+
+class Command < Thor
+  desc 'hello', 'hello world'
+  option :temp,    :aliases => '-t', :type => :string
+  def hello
+    puts options['temp']
+  end
+end
+
+
+Command.start(ARGV)
